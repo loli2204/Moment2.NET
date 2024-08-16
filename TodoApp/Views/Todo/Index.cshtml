@@ -1,0 +1,16 @@
+@model IEnumerable<TodoApp.Models.TodoItem>
+
+<h2>@ViewBag.Message</h2>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <input type="checkbox" disabled @(item.IsCompleted ? "checked" : "") />
+            <span>@item.TaskName</span>
+            <a asp-action="Edit" asp-route-id="@item.Id">Ändra</a>
+        </li>
+    }
+</ul>
+
+<a asp-action="Create">Lägg till</a>

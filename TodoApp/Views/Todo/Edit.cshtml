@@ -1,0 +1,18 @@
+@model TodoApp.Models.TodoItem
+
+<h2>Ändra</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label asp-for="TaskName">Uppgift:</label>
+        <input asp-for="TaskName" />
+    </div>
+    <div>
+        <label asp-for="IsCompleted">Klar:</label>
+        <input type="checkbox" asp-for="IsCompleted" />
+    </div>
+    <button type="submit">Spara</button>
+</form>
+
+<a asp-action="Index">Tillbaka</a>
